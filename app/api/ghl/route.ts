@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 
 export const GET = async (req: Request, res: Response) => {
     try {
+        console.log(process.env.NEXT_PUBLIC_SSO_KEY);
         const posts = getPosts();
 
         return NextResponse.json({ message: "OK", posts },{ status: 200 });

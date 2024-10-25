@@ -1,4 +1,5 @@
-import Crypto from 'crypto-js';
+import Crypto from 'crypto-js'
+import '../../envConfig'
 
 type Post = {
     id: string
@@ -35,9 +36,9 @@ export const getById = (id: string) => {
 
 export const decrypt = (sessionKey: string) => {
     if(sessionKey){
-        console.log(sessionKey);
-        console.log(process.env.NEXT_PUBLIC_API_URL);
-        const bytes  = Crypto.AES.decrypt(sessionKey, process.env.SSO_Key);
+        const ssoKey = process.env.NEXT_PUBLIC_SSO_KEY;
+        console.log(ssoKey);
+        const bytes  = Crypto.AES.decrypt(sessionKey, ssoKey);
         
         const decryptValue = JSON.parse(bytes.toString(Crypto.enc.Utf8));
 
