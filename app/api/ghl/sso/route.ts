@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 export const GET = async (req: Request) => {
     try {
         if (req.headers.get("x-sso-session-key")) {
-            const ssoSessionKey = req.headers.get("x-sso-session-key");
+            const ssoSessionKey = req.headers.get("x-sso-session-key") ?? '';
             const response = decrypt(ssoSessionKey);
             return NextResponse.json({ message: "OK", response },{ status: 200 });
         } else {

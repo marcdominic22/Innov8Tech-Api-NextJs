@@ -36,8 +36,7 @@ export const getById = (id: string) => {
 
 export const decrypt = (sessionKey: string) => {
     if(sessionKey){
-        const ssoKey = process.env.NEXT_PUBLIC_SSO_KEY;
-        console.log(ssoKey);
+        const ssoKey = process.env.NEXT_PUBLIC_SSO_KEY ?? '';
         const bytes  = Crypto.AES.decrypt(sessionKey, ssoKey);
         
         const decryptValue = JSON.parse(bytes.toString(Crypto.enc.Utf8));

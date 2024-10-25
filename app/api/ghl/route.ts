@@ -1,10 +1,8 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { addPosts, getPosts } from "@/app/lib/data";
 import { NextResponse } from "next/server";
 
-export const GET = async (req: Request, res: Response) => {
+export const GET = async () => {
     try {
-        console.log(process.env.NEXT_PUBLIC_SSO_KEY);
         const posts = getPosts();
 
         return NextResponse.json({ message: "OK", posts },{ status: 200 });
@@ -16,7 +14,7 @@ export const GET = async (req: Request, res: Response) => {
     }
 };
 
-export const POST = async (req: Request, res: Response) => {
+export const POST = async (req: Request) => {
     const { title, desc } = await req.json();
     try {
         const posts = { title, desc, id: Date.now().toString() }
