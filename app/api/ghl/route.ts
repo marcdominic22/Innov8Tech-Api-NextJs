@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { addPosts, getPosts } from "@/app/lib/data";
 import { NextResponse } from "next/server";
 
