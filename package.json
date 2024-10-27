@@ -11,8 +11,10 @@
   "dependencies": {
     "crypto-js": "^4.2.0",
     "next": "15.0.1",
+    "next-swagger-doc": "^0.4.0",
     "react": "19.0.0-rc-69d4b800-20241021",
-    "react-dom": "19.0.0-rc-69d4b800-20241021"
+    "react-dom": "19.0.0-rc-69d4b800-20241021",
+    "swagger-ui-react": "^5.17.14"
   },
   "devDependencies": {
     "@types/crypto-js": "^4.2.2",

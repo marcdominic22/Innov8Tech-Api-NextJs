@@ -1,6 +1,23 @@
 import { decrypt } from "@/app/lib/data";
 import { NextResponse } from "next/server";
 
+/**
+ * @swagger
+ * /api/ghl/sso:
+ *   get:
+ *     tags: [SSO]
+ *     responses:
+ *       200:
+ *         description: Session Decryption using Key
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 $ref: '#/components/schemas/Organization'
+ */
+
 export const GET = async (req: Request) => {
     try {
         
