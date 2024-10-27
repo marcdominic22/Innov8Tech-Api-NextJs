@@ -6,17 +6,18 @@ import { NextResponse } from "next/server";
  * /api/ghl/sso:
  *   get:
  *     tags: [SSO]
+ *     parameters:
+ *       - name: x-sso-session-key
+ *         in: header
+ *         required: true
+ *         description: The SSO session key for your app, as returned by the GHL main app.
+ *         schema:
+ *           type: string
  *     responses:
  *       200:
  *         description: Session Decryption using Key
- *         content:
- *           application/json:
- *             schema:
- *               type: array
- *               items:
- *                 type: object
- *                 $ref: '#/components/schemas/Organization'
  */
+
 
 export const GET = async (req: Request) => {
     try {

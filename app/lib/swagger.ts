@@ -27,7 +27,6 @@ export const getApiDocs = async () => {
       },
       security: []
     },
-    
   });
   return spec;
 };
