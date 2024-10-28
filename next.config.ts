@@ -14,7 +14,17 @@ const nextConfig: NextConfig = {
             ]
         }
     ]
-}
+    },
+    async redirects() {
+        return [
+          // Basic redirect
+          {
+            source: '/app/api-doc',
+            destination: '/api-doc',
+            permanent: true,
+          },
+        ]
+      }
 };
 
 export default nextConfig;
