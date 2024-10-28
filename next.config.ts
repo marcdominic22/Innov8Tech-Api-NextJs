@@ -19,7 +19,7 @@ const nextConfig: NextConfig = {
         return [
           // Basic redirect
           {
-            source: '/app/api-doc',
+            source: '/',
             destination: '/api-doc',
             permanent: true,
           },
